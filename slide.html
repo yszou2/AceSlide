@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>AceSlide 使用 HTML 的演示文档工具</title>
+<script type="text/javascript" src="dojo.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="frame.js"></script>
+<script type="text/javascript" src="init.js"></script>
+<script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+<link href="reset.css" type="text/css" rel="stylesheet" media="all"/>
+<link href="main.css" type="text/css" rel="stylesheet" media="all"/>
+<link href="google-code-prettify/prettify.css" type="text/css" rel="stylesheet" media="all"/>
+<style type="text/css">
+    #title_page h1{
+       height: 100px; 
+       line-height: 100px;
+       margin-top: 200px;
+       text-shadow: 2px 2px 2px #FFF;
+       font-size: 40px;
+       letter-spacing: 5px;
+       text-align: center;
+       background-color: #FFD600;
+    }
+
+    #index_page li{
+        font-size: 28px;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="frame" name="" id="title_page">
+        <h1>AceSlide 使用 HTML 的演示文档工具</h1>
+        <h2 style="text-align: center;"><span>邹业盛</span> / <span>yeshengzou@gmail.com</span> / <span>2012-03-28</span></h2>
+    </div>
+
+    <div class="frame" name="开始使用">
+        <ul>
+            <li>AceSlide 以 Frame 为单位来组织演示文档。</li>
+            <li>一个 Frame 即是一个 <i>div</i> ，加上一个 <i>class="frame"</i>。 </li>
+            <li>最关键的，你所做的一切都是在写 HTML ，随意。</li>
+        </ul>
+        <p>要使用 AceSlide 需要做的事包括：</p>
+        <ol>
+            <li>引入一堆 js 文件：<i>dojo.js</i>, <i>main.js</i>, <i>frame.js</i>, <i>init.js</i></li>
+            <li>引入两个 css 文件：<i>reset.css</i>, <i>main.css</i></li>
+            <li>开始写第一个 frame 。</li>
+            <li>在最后引入一段 <i>div[class="toolbar"]</i>。</li>
+            <li>在最后引入一段 <i>div[class="toc"]</i>。</li>
+            <li>在最后补一个 <i>script</i> 标签，否则 chrome 下布局有问题。</li>
+        </ol>
+        <p>下一页展示了最简单的完整代码。</p>
+    </div>
+
+    <div class="frame">
+<xmp class="prettyprint"><!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>AceSlide 使用 HTML 的演示文档工具</title>
+<script type="text/javascript" src="dojo.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="frame.js"></script>
+<script type="text/javascript" src="init.js"></script>
+<script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+<link href="reset.css" type="text/css" rel="stylesheet"/>
+<link href="main.css" type="text/css" rel="stylesheet"/>
+<link href="google-code-prettify/prettify.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="frame" name="" id="title_page">
+    <h1>AceSlide 使用 HTML 的演示文档工具</h1>
+    <h2 style="text-align: center;"><span>邹业盛</span> / 
+        <span>yeshengzou@gmail.com</span> / <span>2012-03-28</span></h2>
+  </div>
+  <div class="toolbar" id="toolbar"> <ul>
+      <li id="connect" class="connect">连接</li> <li id="control" class="control">控制</li>
+      <li><div id="frame_tip">
+        <span>[</span><span id="current_frame">#</span><span> / 
+          </span><span id="total_frame">#</span><span>]</span>
+        <span id="current_slice">#</span><span> / </span><span id="total_slice">#</span>
+        </div>
+      </li> <li><div id="prev"></div></li> <li><div id="next"></div></li>
+  </ul> </div>
+  <div class="toc" id="toc"> <ol></ol> </div>
+  <script type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+</xmp>
+    </div>
+
+    <div class="frame" name="调整样式">
+        <p> AceSlide 中的内容只是普通的 HTML 文本，所以你可以随意地使用 CSS 来调整样式。</p>
+        <p>比如对于第一页标题页，我通常会添加一段 CSS ：</p>
+<xmp class="prettyprint"><style type="text/css">
+#title_page h1{
+   height: 100px; 
+   line-height: 100px;
+   margin-top: 200px;
+   text-shadow: 2px 2px 2px #FFF;
+   font-size: 40px;
+   letter-spacing: 5px;
+   text-align: center;
+   background-color: #FFD600;
+}
+
+#index_page li{
+    font-size: 28px;
+}
+</style>
+</xmp>
+        <p>当然，对于制作演示文档，对于你需要的格式，直接在元素中写 <i>style</i> 是不错的选择。</p>
+<xmp class="prettyprint"><p style="width: 500px; margin: 15px auto;"><i>顺序，即时结果，等待，阻塞，浪费时间</i></p></xmp>
+    </div>
+
+    <div class="frame overlay" name="顺序出现">
+        <p>就像本页的效果一样……</p>
+        <p> Frame 中的节点是可以按顺序依次出现的……</p>
+        <p>只需要在父级节点当中，添加一个 <i>class="overlay"</i>，如： </p>
+<xmp class="prettyprint"><div class="frame overlay" name="顺序出现">
+    <p>就像本页的效果一样……</p>
+    <p> Frame 中的节点是可以按顺序依次出现的……</p>
+    <p>只需要在父级节点当中，添加一个 <i>class="overlay"</i>，如： </p>
+    <ul class="overlay">
+        <li>就如同代码显示……</li>
+        <li>嵌套使用 <i>overlay</i> …… </li>
+        <li>也是可以的。</li>
+    </ul>
+</div>
+</xmp>
+        <ul class="overlay">
+            <li>就如同代码显示……</li>
+            <li>嵌套使用 <i>overlay</i> …… </li>
+            <li>也是可以的。</li>
+        </ul>
+    </div>
+
+    <div class="frame overlay" name="指定顺序">
+        <ul class="overlay phantom" tabindex="1-">
+            <li tabindex="2-">对于<i>overlay</i>是可以在节点当中，使用 <i>tabindex</i> 指定出现的顺序的。</li>
+            <li class="phantom" tabindex="3-">使用<i>class="phantom"</i>可以提前占位。</li>
+        </ul>
+<xmp class="prettyprint" tabindex="0-"><div class="frame overlay" name="指定顺序">
+    <ul class="overlay phantom" tabindex="1-">
+        <li tabindex="2-">对于<i>overlay</i>是可以在节点当中，
+            使用 <i>tabindex</i> 指定出现的顺序的。</li>
+        <li class="phantom" tabindex="3-">使用<i>class="phantom"</i>可以提前占位。</li>
+    </ul>
+</div>
+</xmp>
+        <ul class="overlay">
+            <li tabindex="4-"><i>tabindex="1-"</i>表示的是“从第1帧开始”。</li>
+            <li tabindex="5-">而<i>tabindex="1"</i>表示仅第1帧（从第2帧开始就不可见）。</li>
+            <li tabindex="6-"><i>tabindex</i>计数，对于当前 frame 是一个全局量，不按节点分层次关系。</li>
+        </ul>
+    </div>
+
+    <div class="frame" name="远程控制">
+        <ul>
+            <li>源码中的 <i>server.py</i> 是一个使用 <a href="http://www.tornadoweb.org" target="_blank">tornado</a> 实现的控制服务器。</li>
+            <li>如果你安装了 tornado ，可以直接把这个 <i>server.py</i> 启动起来。</li>
+            <pre class="prettyprint">python server.py --port=8888</pre>
+            <li>注意在 <i>server.py</i> 源码中直接配置一个密码：</li>
+            <pre class="prettyprint">PASSWORD = '123'</pre>
+            <li>点击右下角的“控制”，作为控制方（需要密码）连接到控制服务器。</li>
+            <li>点击右下角的“连接”，作为被控制方连接到控制服务器。</li>
+            <li>控制方翻页时，被控制方会同步翻页。</li>
+            <li>直接访问控制服务器的地址，如 <i>http://localhost:8888/</i> ，输入密码后，作为控制方，进入一个专门的控制平台，它的翻页操作同样影响所有的被控制方（你可以使用手机访问来控制）。</li>
+        </ul>
+    </div>
+
+    <div class="frame" name="更多">
+        <p> AceSlide 只是有着演示文档样子的 Web 页。</p>
+        <p>更多的应用，靠你的想像力。</p>
+
+        <div style="height: 60px; font-size: 50px;">
+            <p class="center">谢　谢</p>
+        </div>
+    </div>
+
+    <div class="toolbar" id="toolbar">
+        <ul>
+            <li id="connect" class="connect">连接</li>
+            <li id="control" class="control">控制</li>
+            <li><div id="frame_tip">
+                <span>[</span><span id="current_frame">#</span><span> / </span><span id="total_frame">#</span><span>]</span>
+                <span id="current_slice">#</span><span> / </span><span id="total_slice">#</span>
+            </div></li>
+            <li><div id="prev"></div></li>
+            <li><div id="next"></div></li>
+        </ul>
+    </div>
+
+    <div class="toc" id="toc">
+        <ol></ol>
+    </div>
+
+<script type="text/javascript" charset="utf-8">
+    //没有这段frame在chrome下位置不对
+</script>
+</body>
+</html>

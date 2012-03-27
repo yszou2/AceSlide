@@ -1,0 +1,160 @@
+html, body{
+    padding: 0px;
+    margin: 0px;
+    /*background: url('img/logo.png') no-repeat;*/
+    background-position: 110% -190%;
+    background-size: 300px;
+    font-size: 22px;
+}
+pre, xmp{
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px !important;
+    margin: 10px;
+}
+
+div.frame{
+    width: 950px;
+    height: 700px;
+    position: absolute;
+    left: 4%;
+    top: 4%;
+    padding: 0%;
+    background-color: white;
+    opacity: 0.9;
+
+    -moz-border-radius: 12px;
+    -khtml-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+
+    -moz-box-shadow: 5px 5px 10px #333333;
+    -webkit-box-shadow: 5px 5px 10px #333333;
+    box-shadow: 5px 5px 10px #333333;
+
+    text-shadow: 1px 1px 1px #fff;
+    border: 1px solid #555;
+}
+div.frame > *{margin: 18px 30px;}
+
+div.toolbar{
+    height: 18px;
+    line-height: 18px;
+    padding: 1px 0px 1px 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    cursor: default;
+    -moz-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow: 2px 2px 5px #333333;
+    -webkit-box-shadow: 2px 2px 5px #333333;
+    box-shadow: 2px 2px 5px #333333;
+    border: 1px solid #555;
+    background-color: #eee;
+    opacity: 0;
+}
+div.toolbar:hover{opacity: 1}
+
+div.toolbar div#prev{width: 16px; height: 16px; cursor: pointer;
+                     background-image: url('img/prev.png')}
+div.toolbar div#prev:hover{background-image: url('img/prev_a.png')}
+div.toolbar div#next{width: 16px; height: 16px; cursor: pointer;
+                     background-image: url('img/next.png')}
+div.toolbar div#next:hover{background-image: url('img/next_a.png')}
+div.toolbar #connect{cursor: pointer;}
+div.toolbar #connect:hover{color: red;}
+div.toolbar #control{cursor: pointer;}
+div.toolbar #control:hover{color: red;}
+
+
+div.frame_title{
+    background-color: #1D93AD;
+    padding: 10px;
+    margin: 10px;
+    -moz-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    color: white;
+    text-shadow: 3px 3px 3px #000;
+    font-size: 150%;
+}
+
+div.toolbar ul li{float: left; margin-right: 10px;}
+div.separate{position: absolute; width: 100%; height: 100%;}
+
+div.toc{
+    padding: 15px;
+    padding-left: 25px;
+    margin: 10px;
+    margin-left: -10px;
+    position: absolute;
+    left: 0px;
+    top: 200px;
+    font-size: 9px;
+    cursor: default;
+    -moz-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow: 2px 2px 5px #333333;
+    -webkit-box-shadow: 2px 2px 5px #333333;
+    box-shadow: 2px 2px 5px #333333;
+    border: 1px solid #555;
+    background-color: #eee;
+    opacity: 0;
+}
+div.toc:hover{opacity: 0.8}
+
+div.toc ol li{
+    margin-bottom: 2px;
+    list-style-position: inside;
+    list-style-type: decimal;
+    cursor: pointer;
+}
+div.toc ol li:hover{color: blue;}
+
+
+div.frame > ul, div.frame > ol{
+    margin-left: 70px;
+}
+div.frame ul li{
+    margin-bottom: 10px;
+    line-height: 1.5em;
+    list-style-image: url('img/bullet.png');
+    list-style-position: outside;
+}
+div.frame ol li{
+    margin-bottom: 10px;
+    line-height: 1.5em;
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+div.frame ol ol li{
+    list-style-type: lower-alpha;
+}
+div.frame p{
+    line-height: 1.5em;
+}
+div.frame p.indent{
+    text-indent: 2em;
+}
+div.frame b{color: red; margin-left: 0.2em; margin-right: 0.2em;}
+div.frame i{color: green; margin-left: 0.2em; margin-right: 0.2em;}
+div.frame tt{
+    font-family: monospace;
+    color: orange;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+div.frame img.block{
+    display: block;
+    margin: auto;
+}
+.phantom{visibility: hidden}
+.center{text-align: center;}

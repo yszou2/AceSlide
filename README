@@ -1,0 +1,13 @@
+AceSlide is a slide system base on html.
+
+You can use html to create your slide, just like any web page.
+
+There is also a `server.py` what is a remote controller.
+
+-----------------
+
+AceSlide 是一个使用 HTML 来完成的演示文档工具。
+
+你可以使用 HTML 来创建你的演讲文档，就你写普通的 Web 页面一样。
+
+同时，它还提供了一个 server.py 的小程序，以实现对演示文档的远程控制。

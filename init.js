@@ -1,7 +1,7 @@
 //开始
 dojo.addOnLoad(function(){
-    //dojo.m.init([0, 0]);
-    dojo.m.init([6, 0]);
+    dojo.m.init([0, 0]);
+    //dojo.m.init([6, 0]);
     prettyPrint();
 });
 

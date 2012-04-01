@@ -233,6 +233,17 @@ dojo.m.to_show = function(f, s){
     dojo.m.show([f, s])
 }
 
+//为打印而将frame全部显示出来
+dojo.m.for_print = function(){
+    dojo.forEach(dojo.m.frames, function(e, i){
+        e.node.show();
+        dojo.style(e.node, {margin: 'auto', position: 'static',
+                            pageBreakAfter: 'always',
+                            boxShadow: 'none'});
+        dojo.query('*[tabindex]', e.node).forEach(function(ee){ee.show()});
+    });
+}        
+
 //绑定'连接'
 dojo.addOnLoad(function(){
     dojo.query('.connect').connect('onclick', function(eventObj){
